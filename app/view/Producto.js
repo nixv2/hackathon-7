@@ -14,4 +14,4 @@ Ext.define('PriceCom.view.Producto',{
 		'<p>Tags: {tags}</p>'
 		].join()
 	}	
-})
+});
