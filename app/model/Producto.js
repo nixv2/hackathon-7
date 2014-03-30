@@ -4,7 +4,8 @@ Ext.define('PriceCom.model.Producto', {
     config: {
         fields: [
             'id',
-            'nombre',
+            'producto',
+            'marca',
             'img',
             {name: 'precio',   type: 'int'},
             'tienda_locacion',
