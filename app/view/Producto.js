@@ -15,7 +15,7 @@ Ext.define('PriceCom.view.Producto',{
 		}],
 		tpl : new Ext.XTemplate( 
 
-		'<p>Producto: {producto}</p>',
+		'<p>Producto: {nombre}</p>',
 		'<p>Marca: {marca}</p>',
 		'<p>Tienda: {tienda}</p>',
 		'<p>Imagen: {img}</p>',
