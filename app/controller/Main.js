@@ -39,7 +39,7 @@ Ext.define('PriceCom.controller.Main', {
                 autoUpdate: false,
                 listeners: {
                     locationupdate: function(geo) {
-                         Ext.data.JsonP.request({
+                         Ext.util.JSONP.request({
                             url: 'http://10.20.218.103/pricecom/lista_producto.php',
                             callbackKey: 'callback',
                             params: {
