@@ -12,21 +12,26 @@ Ext.define('PriceCom.view.ProductoAlta',{
 				action : 'productos'
 			}]
 		},{
-			xtype : 'textfield',
-			name : 'nombre',
-			label : 'Nombre'
-		}, {
-			xtype : 'numberfield',
-			name : 'precio',
-			label : 'Precio'
-		}, {
-			xtype : 'textfield',
-			name : 'img',
-			label : 'Foto'
-		}, {
-			xtype : 'textfield',
-			name : 'tags',
-			label : 'Tags'
+			xtype : 'fieldset',
+			title : 'Alta de Productos',
+			instructions : 'Agrega un Producto'
+			items : [{
+				xtype : 'textfield',
+				name : 'nombre',
+				label : 'Nombre'
+			}, {
+				xtype : 'numberfield',
+				name : 'precio',
+				label : 'Precio'
+			}, {
+				xtype : 'textfield',
+				name : 'img',
+				label : 'Foto'
+			}, {
+				xtype : 'textfield',
+				name : 'tags',
+				label : 'Tags'
+			}]
 		}]
 	}
 });
