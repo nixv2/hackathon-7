@@ -32,6 +32,13 @@ Ext.define('PriceCom.view.ProductoAlta',{
 				name : 'tags',
 				label : 'Tags'
 			}]
-		}]
+		}, {
+				xtype : 'button',
+				text : 'Guardar',
+				width : 200,
+				margin : '0 auto',
+				ui : 'confirm',
+				action : 'save'
+			}]
 	}
 });
