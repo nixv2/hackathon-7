@@ -1,7 +1,9 @@
 Ext.define('PriceCom.view.Producto',{
 	extend : 'Ext.Panel',
 	alias : 'widget.producto',
+	require : ['Ext.XTemplate'],
 	config : {
+		styleHtmlContent : true,
 		items : [{
 			docket : 'top',
 			xtype : 'toolbar',
@@ -11,7 +13,8 @@ Ext.define('PriceCom.view.Producto',{
 				action : 'productos'
 			}]
 		}],
-		tpl : [
+		tpl : new Ext.XTemplate( 
+
 		'<p>Producto: {producto}</p>',
 		'<p>Marca: {marca}</p>',
 		'<p>Tienda: {tienda}</p>',
@@ -20,7 +23,11 @@ Ext.define('PriceCom.view.Producto',{
 		'<p>Locacion: {tienda_locacion}</p>',
 		'<p>Nombre Tienda: {tienda_nombre}</p>',
 		'<p>Likes: {likes}</p>',
-		'<p>Tags: {tags}</p>'
-		].join()
+		'<p>Tags:',
+		'<tpl for="tags">',
+			 ' {name},',
+		'</tpl>',
+		'</p>'
+		)
 	}	
 });
