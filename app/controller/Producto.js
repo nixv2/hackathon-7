@@ -11,9 +11,15 @@ Ext.define('PriceCom.controller.Producto', {
     },
 
     guardarProducto: function(button){
-        console.log(button.up('formpanel').getValues());
-        var record = button.up('formpanel').getValues();
         var form = button.up('formpanel');
+        var record = button.up('formpanel').getValues();
+        record.longitud = 'asdfffff';
+        record.latitud = 'asdfffff';
+        record.img = 'asdfffff',
+        record.tienda_nombre = 'asdfffff';
+        record.likes = 0;
+        console.log(record);
+
         /*form.submit({
             params : {
                 producto : record
@@ -27,14 +33,22 @@ Ext.define('PriceCom.controller.Producto', {
                 Ext.Msg.alert("Ocurrio un error, Intente de nuevo en un momento.");
             }
         });*/
-        Ext.Ajax.request({
-            type: 'POST',
-            contentType:'application/json',
-            dataType: 'jsonp',
+        Ext.util.JSONP.request({
+            // contentType:'application/json',
+            // dataType: 'jsonp',
             params: {
-                producto : record
+                // producto : record
+                nombre : record.nombre,
+                marca : record.marca,
+                precio : record.precio,
+                tags : record.tags,
+                longitud : record.longitud,
+                latitud : record.latitud,
+                img : record.img,
+                tienda_nombre : record.tienda_nombre,
+                likes : record.likes
             },
-            url : 'http://10.20.218.103:8080/pricecom/producto/save',
+            url : 'http://10.20.218.103/pricecom/guardar_producto.php',
             success: function(response, opts) {
                 console.log('server-side success with status code ' + response.status);
             },
