@@ -44,6 +44,11 @@ Ext.define('PriceCom.view.ProductosList', {
         store: {
             type : 'productos'
         },
-        itemTpl : '{nombre}'
+        itemTpl : [
+            '<div>',
+            '<img src="{img}">',
+            '{nombre}',
+            '</div>',
+        ].join()
     }
 });
