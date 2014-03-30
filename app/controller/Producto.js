@@ -29,8 +29,8 @@ Ext.define('PriceCom.controller.Producto', {
         record.longitud = 'asdfffff';
         record.latitud = 'asdfffff';
         record.img = this.getPhoto().getImageDataUrl(),
-        record.tienda_nombre = 'asdfffff';
         record.likes = 0;
+        console.log(record)
 
         Ext.util.JSONP.request({
             // contentType:'application/json',
@@ -44,7 +44,6 @@ Ext.define('PriceCom.controller.Producto', {
                 longitud : record.longitud,
                 latitud : record.latitud,
                 img : record.img,
-                tienda_nombre : record.tienda_nombre,
                 likes : record.likes
             },
             url : 'http://10.20.218.103/pricecom/guardar_productos.php',

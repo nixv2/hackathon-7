@@ -8,7 +8,8 @@ Ext.define('PriceCom.model.Producto', {
             'marca',
             'img',
             {name: 'precio',   type: 'int'},
-            'tienda_locacion',
+            'logitud',
+            'latitud',
             'tienda_nombre',
             'likes',
             'tags'
