@@ -4,7 +4,8 @@ Ext.define('PriceCom.controller.Main', {
     config: {
         refs: {
             main : 'main',
-            busquedaBarra: '#searchbar'
+            busquedaBarra: '#searchbar',
+            producto : 'producto'
         },
         control: {
             'main productosList': {
@@ -26,9 +27,12 @@ Ext.define('PriceCom.controller.Main', {
     launch: function(app) {
 
     },
-    mostrarProducto: function(){
+    mostrarProducto: function(dataview, index, terget, record){
         var me = this,
             main = me.getMain();
+            producto = me.getProducto();
+            producto.setData(record.data);
+            console.log(record.data);
 
         main.setActiveItem(1);
     },
