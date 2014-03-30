@@ -14,7 +14,7 @@ Ext.define('PriceCom.view.ProductoAlta',{
 		},{
 			xtype : 'fieldset',
 			title : 'Alta de Productos',
-			instructions : 'Agrega un Producto'
+			instructions : 'Campo marcados con * son Obligatorios',
 			items : [{
 				xtype : 'textfield',
 				name : 'nombre',
