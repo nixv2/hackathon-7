@@ -20,13 +20,13 @@ Ext.define('PriceCom.view.ProductoAlta',{
 				name : 'nombre',
 				label : 'Nombre'
 			}, {
+				xtype : 'textfield',
+				name : 'marca',
+				label : 'Marca'
+			}, {
 				xtype : 'numberfield',
 				name : 'precio',
 				label : 'Precio'
-			}, {
-				xtype : 'textfield',
-				name : 'img',
-				label : 'Foto'
 			}, {
 				xtype : 'textfield',
 				name : 'tags',
