@@ -27,6 +27,7 @@ Ext.define('PriceCom.view.ProductosList', {
                 xtype   : 'toolbar',
                 docked  : 'top',
                 itemId  : 'searchbar',
+                hidden  : true,
                 items   : [{
                     xtype   : 'searchfield',
                     flex    : 1,

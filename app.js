@@ -30,7 +30,8 @@ Ext.application({
         'Main'
     ],
     controllers: [
-        'Main'
+        'Main',
+        'Producto'
     ],
     icon: {
         '57': 'resources/icons/Icon.png',
