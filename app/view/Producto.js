@@ -1,5 +1,5 @@
 Ext.define('PriceCom.view.Producto',{
-	extend : 'Ext.panel.Panel',
+	extend : 'Ext.Panel',
 	alias : 'widget.producto',
 	config : {
 		items : [{
