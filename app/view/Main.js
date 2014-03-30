@@ -12,7 +12,7 @@ Ext.define('PriceCom.view.Main', {
 
     config: {
         layout: 'card',
-        activeItem: 2,
+        activeItem: 0,
         items: [
             {xtype :'productosList'},
             {xtype : 'producto'},
