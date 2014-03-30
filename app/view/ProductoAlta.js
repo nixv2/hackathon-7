@@ -1,7 +1,11 @@
 Ext.define('PriceCom.view.ProductoAlta',{
 	extend : 'Ext.form.Panel',
 	alias : 'widget.productoAlta',
+	requires: [
+		'PriceCom.view.CapturePicture'
+	],
 	config : {
+		cls: 'user-form',
 		items : [ {
 			docket : 'top',
 			xtype : 'toolbar',
@@ -12,6 +16,8 @@ Ext.define('PriceCom.view.ProductoAlta',{
 				action : 'productos'
 			}]
 		},{
+            xtype: 'capturepicture'
+        },{
 			xtype : 'fieldset',
 			title : 'Alta de Productos',
 			instructions : 'Campo marcados con * son Obligatorios',
