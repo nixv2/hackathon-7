@@ -1,8 +1,17 @@
 Ext.define('PriceCom.view.ProductoAlta',{
 	exten : 'Ext.form.Panel',
-	alias : 'witget.productoAlta'
+	alias : 'witget.productoAlta',
 	config : {
 		items : [ {
+			docket : 'top',
+			xtype : 'toolbar',
+			title : 'Producto',
+			items : [{
+				xtype : 'button',
+				text : 'Produtos',
+				action : 'productos'
+			}]
+		},{
 			xtype : 'textfield',
 			name : 'nombre',
 			label : 'Nombre'
