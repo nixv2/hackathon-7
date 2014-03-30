@@ -50,10 +50,13 @@ Ext.define('PriceCom.controller.Producto', {
             },
             url : 'http://10.20.218.103/pricecom/guardar_producto.php',
             success: function(response, opts) {
-                console.log('server-side success with status code ' + response.status);
+                console.log('server-side success with status code o' + response.status);
+                Ext.Msg.alert("Success","Producto guardado Exitosamente");
+                form.reset();
             },
             failure: function(response, opts) {
-                console.log('server-side failure with status code ' + response.status);
+                Ext.Msg.alert("Ocurrio un Error");
+                
             },
             error: function(msg){
             alert(msg);
