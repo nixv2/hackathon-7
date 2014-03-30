@@ -5,8 +5,100 @@
 @import 'sencha-touch/default/all';
 
 // Custom code goes here..
-@import 'includes/capturepicture';
-@import 'includes/icons';
+
+
+
+.picture-capture{
+    @include background-image(linear-gradient(#1676b9,#10598d));
+    @include border-radius(3px);
+    @include box-shadow(inset 0px 1px 1px #1a86d2);
+    border:1px solid #000000;
+    border-width:1px;
+    overflow: hidden;
+    margin:20px auto;
+
+    input{
+        border: 0;
+        position: absolute;
+        cursor: pointer;
+        top: -2px;
+        right: -2px;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        font-size: 1000px;
+    }
+
+    img{
+        position: absolute;
+        @include border-radius(3px);
+        width: 100%;
+        height: 100%;
+        display:none;
+    }
+
+    .icon{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color:#fff;
+        text-align: center;
+        font-size: 0.8em;
+        i{
+            display:block;
+            font-size: 3.5em;;
+            color:#fff;
+        }
+    }
+}
+
+@mixin custom-icon($name, $font-family: false) {
+    .icon-#{$name}{
+        $character: icon-character-for-name($name);
+
+        &:before {
+            font-style: normal;
+            text-align: center;
+
+            @if $font-family {
+                font-family: $font-family;
+            } @else{
+                font-family: 'Pictos';
+            }
+
+            @if $character {
+                content: "#{$character}";
+            } @else {
+                content: "#{$name}";
+            }
+        }
+    }
+}
+
+@include custom-icon('camera');
+
+
+
+
+
+
+
+.visitors-list{
+  height: 200px !important;
+  border: 2px solid #acaeaf;
+  border-top: none;
+  border-radius: 0px 0px 4px 4px;
+  .x-list-item{
+    border-top: 1px solid #d3d3d3;
+    background-color: #eeeeee;
+    box-shadow: inset 0px 1px 0px #f0f0f0;
+    color: #a0a3a6;
+    font-weight: normal;
+  }
+  .x-item-pressed{
+    background-color: #d3d3d3;
+    box-shadow: none;
+  }
+}
 
 // Examples of using the icon mixin:
 // @include icon('user');

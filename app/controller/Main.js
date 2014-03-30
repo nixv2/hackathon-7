@@ -22,7 +22,7 @@ Ext.define('PriceCom.controller.Main', {
             'main toolbar button[action=search]':{
                 tap : 'barraBusqueda'
             },
-            'searchfield':{
+            'toolbar searchfield':{
                 blur    : 'blurSearch',
                 focus   : 'focusSearch'
             }

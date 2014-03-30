@@ -68,7 +68,7 @@
      */
     "css": [
         {
-            "path": "resources/css/cupertino.css",
+            "path": "resources/css/app.css",
             "update": "delta"
         }
     ],
