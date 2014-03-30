@@ -31,7 +31,37 @@ Ext.define('PriceCom.controller.Main', {
     
     //called when the Application is launched, remove if not needed
     launch: function(app) {
-        
+        var latitude='',
+            longitude='',
+            productos = this.getResult().getStore();
+
+        var geo = Ext.create('Ext.util.Geolocation', {
+                autoUpdate: false,
+                listeners: {
+                    locationupdate: function(geo) {
+                         Ext.data.JsonP.request({
+                            url: 'http://10.20.218.103/pricecom/lista_producto.php',
+                            callbackKey: 'callback',
+                            params: {
+                                latitude: geo.getLatitude(),
+                                longitude:geo.getLongitude(),
+                            },
+                            success: function(result, request) {
+                                productos.setData(result);
+                                productos.load();
+                            }
+                        });
+                    },
+                    locationerror: function(geo, bTimeout, bPermissionDenied, bLocationUnavailable, message) {
+                        if(bTimeout){
+                            alert('Timeout occurred.');
+                        } else {
+                            alert(message + '.');
+                        }
+                    }
+                }
+            });
+            geo.updateLocation();
     },
     mostrarProducto: function(dataview, index, terget, record){
         var me = this,
