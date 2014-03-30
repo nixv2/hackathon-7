@@ -17,6 +17,9 @@ Ext.define('PriceCom.controller.Main', {
 
     },
     mostrarProcto: function(){
-        console.log('ala')
+        var me = this,
+            main = me.getMain();
+
+        main.setActiveItem(1);
     }
 });

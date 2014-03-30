@@ -3,6 +3,19 @@ Ext.define('PriceCom.view.ProductosList', {
     xtype: 'productosList',
     
     config: {
+        items: [
+            {
+                docked: 'top',
+                xtype: 'toolbar',
+                items : [
+                    {
+                        xtype: 'button',
+                        text: 'add',
+                        action : 'add'
+                    }
+                ]
+            }
+        ],
         store: {
             type : 'productos'
         },
