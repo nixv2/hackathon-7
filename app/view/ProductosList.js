@@ -10,7 +10,7 @@ Ext.define('PriceCom.view.ProductosList', {
                 items : [
                     {
                         xtype: 'button',
-                        text: 'add',
+                        text: 'Agregar',
                         action : 'add'
                     },
                     {
