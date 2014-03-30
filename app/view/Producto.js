@@ -2,6 +2,16 @@ Ext.define('PriceCom.view.Producto',{
 	extend : 'Ext.panel.Panel',
 	alias : 'widget.producto',
 	config : {
+		items : [{
+			docket : 'top',
+			xtype : 'toolbar',
+			title : 'Producto',
+			items : [{
+				xtype : 'button',
+				text : 'Produtos',
+				action : 'productos'
+			}]
+		}],
 		tpl : [
 		'<p>Producto: {producto}</p>',
 		'<p>Marca: {marca}</p>',
