@@ -3,7 +3,8 @@ Ext.define('PriceCom.controller.Main', {
 
     config: {
         refs: {
-            main : 'main'
+            main : 'main',
+            busquedaBarra: '#searchbar'
         },
         control: {
             'main productosList': {
@@ -14,6 +15,9 @@ Ext.define('PriceCom.controller.Main', {
             }, 
             'main toolbar button[action=add]':{
                 tap : 'mostrarProductoAlta'
+            },
+            'main toolbar button[action=search]':{
+                tap : 'barraBusqueda'
             }
         }
     },
@@ -37,5 +41,16 @@ Ext.define('PriceCom.controller.Main', {
         var me = this,
             main = me.getMain();
         main.setActiveItem(2);
+    },
+    barraBusqueda: function(){
+        var me = this,
+            barra = me.getBusquedaBarra();
+
+        if (barra.isHidden()) {
+            barra.show();
+        }else{
+            barra.hide();
+        }
+
     }
 });

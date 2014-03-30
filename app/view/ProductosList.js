@@ -31,7 +31,7 @@ Ext.define('PriceCom.view.ProductosList', {
                     xtype   : 'searchfield',
                     flex    : 1,
                     height  : 27,
-                    placeHolder : 'Busque por palabras o número'
+                    placeHolder : 'Busque producto'
                 },{
                     xtype   : 'button',
                     text    : 'Buscar',
