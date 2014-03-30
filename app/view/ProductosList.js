@@ -44,6 +44,6 @@ Ext.define('PriceCom.view.ProductosList', {
         store: {
             type : 'productos'
         },
-        itemTpl : '{producto}'
+        itemTpl : '{nombre}'
     }
 });

@@ -32,12 +32,6 @@ Ext.define('PriceCom.controller.Main', {
     //called when the Application is launched, remove if not needed
     launch: function(app) {
         
-        Ext.util.JSONP.request({
-            url         : 'http://10.20.218.103:8080/pricecom/producto/index',
-            callback    : this.saveData,
-            scope       : this,
-            callbackKey : 'callback'
-        });
     },
     mostrarProducto: function(dataview, index, terget, record){
         var me = this,

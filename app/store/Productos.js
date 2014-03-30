@@ -7,10 +7,10 @@ Ext.define('PriceCom.store.Productos',{
         autoLoad: true,
         proxy: {
             type: 'jsonp',
-            url : 'http://10.20.218.103:8080/pricecom/producto/index',
+            url : 'http://10.20.218.103/pricecom/lista_producto.php',
             reader: {
                 type: 'json',
-                rootProperty: 'productos'
+                rootProperty: 'data'
             }
         }
         // data: [
