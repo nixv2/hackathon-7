@@ -6,7 +6,8 @@ Ext.define('PriceCom.view.Main', {
         'PriceCom.store.Productos',
         'PriceCom.model.Producto',
         'PriceCom.view.ProductosList',
-        'PriceCom.view.Producto'
+        'PriceCom.view.Producto',
+        'PriceCom.view.ProductoAlta'
     ],
 
     config: {
@@ -14,7 +15,8 @@ Ext.define('PriceCom.view.Main', {
         setAtiveItem: 0,
         items: [
             {xtype :'productosList'},
-            {xtype : 'producto'}
+            {xtype : 'producto'},
+            {xtype : 'productoAlta'}
         ]
     }
 });

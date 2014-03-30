@@ -1,6 +1,6 @@
 Ext.define('PriceCom.view.ProductoAlta',{
-	exten : 'Ext.form.Panel',
-	alias : 'witget.productoAlta',
+	extend : 'Ext.form.Panel',
+	alias : 'widget.productoAlta',
 	config : {
 		items : [ {
 			docket : 'top',

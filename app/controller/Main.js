@@ -10,7 +10,7 @@ Ext.define('PriceCom.controller.Main', {
                 itemtap :'mostrarProducto'
             }, 
             'main toolbar button[action=productos]':{
-                itemtam : 'mostarProductos'
+                tap : 'mostarProductos'
             }
         }
     },
@@ -27,6 +27,7 @@ Ext.define('PriceCom.controller.Main', {
     },
     mostarProductos : function(){
         var me = this,
-            main = me.getMain(0);
+            main = me.getMain();
+        main.setActiveItem(0);
     }
 });

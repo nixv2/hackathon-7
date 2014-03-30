@@ -5,10 +5,9 @@ Ext.define('PriceCom.view.Producto',{
 		items : [{
 			docket : 'top',
 			xtype : 'toolbar',
-			title : 'Producto',
 			items : [{
 				xtype : 'button',
-				text : 'Produtos',
+				text : 'Productos',
 				action : 'productos'
 			}]
 		}],
