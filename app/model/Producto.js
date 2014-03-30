@@ -3,7 +3,7 @@ Ext.define('PriceCom.model.Producto', {
 
     config: {
         fields: [
-            'id',
+            {name: 'id',   type: 'int'},
             'producto',
             'marca',
             'img',

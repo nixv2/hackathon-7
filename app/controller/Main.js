@@ -5,7 +5,9 @@ Ext.define('PriceCom.controller.Main', {
         refs: {
             main : 'main',
             busquedaBarra: '#searchbar',
-            producto : 'producto'
+            producto : 'producto',
+            busquedabtn : 'toolbar button[action=buscarProducto]',
+            result : 'main productosList'
         },
         control: {
             'main productosList': {
@@ -19,13 +21,23 @@ Ext.define('PriceCom.controller.Main', {
             },
             'main toolbar button[action=search]':{
                 tap : 'barraBusqueda'
+            },
+            'searchfield':{
+                blur    : 'blurSearch',
+                focus   : 'focusSearch'
             }
         }
     },
     
     //called when the Application is launched, remove if not needed
     launch: function(app) {
-
+        
+        Ext.util.JSONP.request({
+            url         : 'http://10.20.218.103:8080/pricecom/producto/index',
+            callback    : this.saveData,
+            scope       : this,
+            callbackKey : 'callback'
+        });
     },
     mostrarProducto: function(dataview, index, terget, record){
         var me = this,
@@ -56,5 +68,22 @@ Ext.define('PriceCom.controller.Main', {
             barra.hide();
         }
 
+    },
+    focusSearch : function(){
+        this.getBusquedabtn().show();
+    },
+
+    blurSearch  : function(field){
+        if(field.getValue() === ""){
+            this.clearSearch();
+            this.getBusquedabtn().hide();
+        }
+    },
+    clearSearch : function(field){
+        this.getResult().getStore().clearFilter();
+    },
+    saveData: function(success, data){
+        console.log(data)
     }
+
 });
