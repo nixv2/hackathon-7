@@ -40,7 +40,7 @@ Ext.define('PriceCom.controller.Producto', {
                 tienda_nombre : record.tienda_nombre,
                 likes : record.likes
             },
-            url : 'http://10.20.218.103/pricecom/guardar_productosss.php',
+            url : 'http://10.20.218.103/pricecom/guardar_productos.php',
             success: function(response, opts) {
                 Ext.Msg.alert("Success","Producto guardado Exitosamente");
                 form.reset();
