@@ -2,7 +2,9 @@ Ext.define('PriceCom.view.ProductoAlta',{
 	extend : 'Ext.form.Panel',
 	alias : 'widget.productoAlta',
 	requires: [
-		'PriceCom.view.CapturePicture'
+		'PriceCom.view.CapturePicture',
+        'PriceCom.model.Tienda',
+		'PriceCom.store.Tiendas'
 	],
 	config : {
 		cls: 'user-form',
@@ -37,7 +39,22 @@ Ext.define('PriceCom.view.ProductoAlta',{
 				xtype : 'textfield',
 				name : 'tags',
 				label : 'Tags'
-			}]
+			},{
+                xtype: 'searchfield',
+                label: 'Tienda',
+                name : 'tienda',
+                cls : 'search-visitors-field',
+                // placeHolder: 'Please start to type your name'
+            },{
+                xtype: 'list',
+                store: {
+                    type : 'tiendas'
+                },
+                cls : 'visitors-list',
+                itemTpl: '{nombre} <span>{direccion}</span>',
+                disableSelection: true,
+                hidden: true
+            }]
 		}, {
 				xtype : 'button',
 				text : 'Guardar',
