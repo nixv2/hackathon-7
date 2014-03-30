@@ -47,6 +47,7 @@ Ext.define('PriceCom.controller.Main', {
                                 longitude:geo.getLongitude(),
                             },
                             success: function(result, request) {
+                                console.log(result)
                                 productos.setData(result);
                                 productos.load();
                             }

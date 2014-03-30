@@ -4,7 +4,7 @@ Ext.define('PriceCom.store.Productos',{
     
     config :{
         model: 'PriceCom.model.Producto',
-        // autoLoad: true,
+        autoLoad: true,
         proxy: {
             type: 'jsonp',
             url : 'http://10.20.218.103/pricecom/lista_producto.php',
