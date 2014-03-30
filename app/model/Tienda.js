@@ -4,7 +4,9 @@ Ext.define('PriceCom.model.Tienda', {
     config: {
         fields: [
             'nombre',
-            'direccion'
+            'direccion',
+            'longitud',
+            'latitud'
         ]
     }
 });

@@ -4,7 +4,8 @@ Ext.define('PriceCom.controller.Producto', {
     config: {
         refs: {
             photo :'capturepicture',
-            tiendasList: 'productoAlta list'
+            tiendasList: 'productoAlta list',
+            tienda: 'productoAlta searchfield'
         },
         control: {
             'main productoAlta button[action=save]': {
@@ -13,6 +14,9 @@ Ext.define('PriceCom.controller.Producto', {
             'main productoAlta [name=tienda]':{
                 keyup: 'buscarTienda',
                 clearicontap: 'onClearSearchVisitor'
+            },
+            'productoAlta list': {
+                itemtap: 'seleccionTienda'
             }
 
         }
@@ -43,7 +47,7 @@ Ext.define('PriceCom.controller.Producto', {
                 tienda_nombre : record.tienda_nombre,
                 likes : record.likes
             },
-            url : 'http://10.20.218.103/pricecom/guardar_productosss.php',
+            url : 'http://10.20.218.103/pricecom/guardar_productos.php',
             success: function(response, opts) {
                 console.log('server-side success with status code o' + response.status);
                 Ext.Msg.alert("Success","Producto guardado Exitosamente");
@@ -78,5 +82,10 @@ Ext.define('PriceCom.controller.Producto', {
             });
         }
         list.setHidden(setListHidden);
+    },
+    seleccionTienda : function(dataView, index, target, record, e, eOpts){
+        this.getTienda().setValue("");
+        this.getTienda().setValue(record.data.nombre);
+        dataView.hide()
     }
 });
