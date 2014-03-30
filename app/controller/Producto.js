@@ -19,25 +19,8 @@ Ext.define('PriceCom.controller.Producto', {
         record.tienda_nombre = 'asdfffff';
         record.likes = 0;
         console.log(record);
-
-        /*form.submit({
-            params : {
-                producto : record
-            },
-            url : 'http://10.20.218.103:8080/pricecom/producto/save',
-            method : 'POST',
-            success: function() { 
-                Ext.Msg.alert("Alta de Producto."); 
-            }, 
-            failure: function() { 
-                Ext.Msg.alert("Ocurrio un error, Intente de nuevo en un momento.");
-            }
-        });*/
         Ext.util.JSONP.request({
-            // contentType:'application/json',
-            // dataType: 'jsonp',
             params: {
-                // producto : record
                 nombre : record.nombre,
                 marca : record.marca,
                 precio : record.precio,
@@ -50,7 +33,6 @@ Ext.define('PriceCom.controller.Producto', {
             },
             url : 'http://10.20.218.103/pricecom/guardar_producto.php',
             success: function(response, opts) {
-                console.log('server-side success with status code o' + response.status);
                 Ext.Msg.alert("Success","Producto guardado Exitosamente");
                 form.reset();
             },
